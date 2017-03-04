@@ -1,0 +1,24 @@
+{
+  "name": "peobot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ftechiesnitin/peobot.git"
+  },
+  "author": "ftechiesnitin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ftechiesnitin/peobot/issues"
+  },
+  "homepage": "https://github.com/ftechiesnitin/peobot#readme",
+  "dependencies": {
+    "body-parser": "^1.17.0",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.0"
+  }
+}
