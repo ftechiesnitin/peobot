@@ -17,8 +17,9 @@
   },
   "homepage": "https://github.com/ftechiesnitin/peobot#readme",
   "dependencies": {
-    "body-parser": "^1.17.0",
+    "api-ai-recognizer": "^1.0.2",
+    "botbuilder": "^3.7.0",
     "dotenv": "^4.0.0",
-    "express": "^4.15.0"
+    "restify": "^4.3.0"
   }
 }
