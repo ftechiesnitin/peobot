@@ -1,6 +1,7 @@
 const restify = require('restify');
 const builder = require('botbuilder');
 const apiAiRecognizer = require('api-ai-recognizer');
+const queryString = require('query-string');
 // Get configuration
 const cfg = require('./config/config.js');
 // Bot Configs
@@ -31,6 +32,7 @@ intents.matches('whoStarted', function (session) {
 
 // Server Init
 const server = restify.createServer();
+server.use(restify.queryParser());
 const port = (process.env.PORT || 8000);
 server.listen(port, function() {
     console.log('Listening on ' + port);
@@ -39,8 +41,8 @@ server.post('/api/message', connector.listen());
 
 /* For Facebook Validation */
 server.get('/webhook', function(req, res) {
-  if (req.query['hub.mode'] && req.query['hub.verify_token'] === 'tuxedo_cat') {
-    res.send(req.query['hub.challenge']);
+  if (req.query.hub.mode && req.query.hub.verify_token === cfg.botFramework.appId) {
+    res.send(200, parseInt(req.query.hub.challenge));
   } else {
     res.status(403).end();
   }
