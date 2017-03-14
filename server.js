@@ -31,8 +31,9 @@ intents.matches('whoStarted', function (session) {
 
 // Server Init
 const server = restify.createServer();
-server.listen(process.env.PORT || 8000, function() {
-    console.log('Listening on ' + cfg.port);
+const port = (process.env.PORT || 8000);
+server.listen(port, function() {
+    console.log('Listening on ' + port);
 });
 server.post('/api/message', connector.listen());
 server.get('/test', function (req, res) {
