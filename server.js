@@ -36,6 +36,16 @@ server.listen(port, function() {
     console.log('Listening on ' + port);
 });
 server.post('/api/message', connector.listen());
+
+/* For Facebook Validation */
+server.get('/webhook', function(req, res) {
+  if (req.query['hub.mode'] && req.query['hub.verify_token'] === 'tuxedo_cat') {
+    res.status(200).send(req.query['hub.challenge']);
+  } else {
+    res.status(403).end();
+  }
+});
+
 server.get('/test', function (req, res) {
   res.send({'message': 'test api.'});
 });
