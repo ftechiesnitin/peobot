@@ -1,7 +1,6 @@
 const restify = require('restify');
 const builder = require('botbuilder');
 const apiAiRecognizer = require('api-ai-recognizer');
-const queryString = require('query-string');
 // Get configuration
 const cfg = require('./config/config.js');
 // Bot Configs
