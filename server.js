@@ -22,15 +22,25 @@ intents.matches('greeting', function (session) {
 });
 
 intents.matches('whatIsPeo', function (session) {
-    return session.send("PEO is PUNE EAT OUTS. A Food lover group for pune people. We find good places to eat and share it with people.");
+    return session.send("Started on 21st Sept 2015. PEO is in its 12th year.");
 });
 
 intents.matches('whoStartedPeo', function (session) {
-    return session.send("PEO was started by Avengers.");
+    return session.send("An engineer, then a MBA then a business consultant but a food lover before everything, founder of PEO and perhaps among the finest food people you have seen.");
 });
 
 intents.matches('peoCardInfo', function (session) {
-    return session.send("More about PEO card http://puneeatouts.in/privilege-card/. One card for one person :).");
+    var data = "It's a signature offering of PEO for its FriendsofPEO Program. " +
+             "Since 2005, we are indeed proud to have played our bit in shaping and influencing the food scene in Pune. " +
+             "We have been a part of an engagement, friendship and sharing called PEO. " +
+             "Friends Of PEO Program is targeted at increasing our footprint further and position ourselves strategically where we get more value every time when we eat out. " +
+             "The idea is to connect the restaurants directly with their customers. " +
+             "We want the patrons to feel at home and connected to the place so that they can not only appreciate " +
+             "the great food but also provide valuable inputs to the food place owners. " +
+             "For PEO card holders, this is an opportunity to get more value in our food outings. " +
+             "That's not all; we also get to know more about the food, the place and the owners. Get your PEO card, Get recognized! " +
+             "For Restaurants, a very genuine medium to reach and know their customers personally and better!";
+    return session.send( data + " More about PEO card http://puneeatouts.in/privilege-card/.");
 });
 // time to get the peo card
 intents.matches('moreAboutPeoCard', function (session) {
@@ -54,7 +64,7 @@ intents.matches('whatIsPeoMeet', function (session) {
 });
 
 intents.matches('aniRelation', function (session) {
-    return session.send("About Aniruddha patil.");
+    return session.send("An engineer , then a MBA then a business consultant but a food lover before everything , founder of PEO and perhaps among the finest food people you have seen.");
 });
 
 // Server Init
